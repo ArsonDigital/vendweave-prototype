@@ -1,30 +1,14 @@
-# VendWeave Shopper Experience — Prototype 02
+# VendWeave unified prototype
 
-A static, responsive shopper-facing marketplace prototype built with plain HTML, CSS, and JavaScript. No framework, package installation, build process, paid AI builder, or backend is required.
+This merged static prototype combines the original VendWeave heritage marketplace and Guild/vendor/organizer presentation with the expanded shopper discovery experience.
 
-## Preview
-Open `index.html` in a modern browser. Internet access is needed for the remote sample photography and Google Fonts.
+## Files
+- `index.html` — unified homepage and sections
+- `styles.css` — shopper styling plus original Guild/vendor/membership styling
+- `script.js` — product discovery, filters, saved finds, maker follows, dialogs, event preview, and vendor/organizer concept panels
 
-## Included shopper flows
-- Search sample products and makers by keyword
-- Filter by category, location, and upcoming-event availability
-- Sort discoveries by featured, product name, or maker
-- Open product detail panels with maker story and sample community comments
-- Save/unsave products and view a personal collection
-- Open maker profiles, follow makers, and view their featured products
-- Explore a sample event and click booth-map locations
-- Preview a shopper profile and account-style summary
-- Responsive mobile navigation and layouts
+## Publish
+Upload these three files to the root of your existing `vendweave-prototype` GitHub repository, replacing the previous versions. Keep a backup of the current repository first. If connected to Cloudflare Pages through Git, a commit to `main` triggers deployment. Use framework preset None, build command `exit 0`, output directory `.`.
 
 ## Demo limitations
-This is a clickable concept prototype, not a production marketplace. Product listings, prices, vendor names, locations, event details, booth assignments, and comments are illustrative. Favorites and follows exist only in the current page session; comments are local to the open product panel. There is no real account authentication, shared database, live event data, payment processing, moderation, or persistent cross-device state. The sample event date is illustrative and must not be presented as a real event.
-
-## Publish free with GitHub + Cloudflare Pages
-1. Create a GitHub repository, for example `vendweave-shopper`.
-2. Upload the contents of this folder to the repository root: `index.html`, `styles.css`, `script.js`, and `README.md`.
-3. In Cloudflare, open Workers & Pages → Create application → Pages → Connect to Git.
-4. Connect GitHub and select the repository.
-5. Set production branch to `main`, framework preset to None, build command to `exit 0`, and build output directory to `/` (or `.` if required by the dashboard).
-6. Deploy. Cloudflare provides a `*.pages.dev` URL and can redeploy when you commit updates to GitHub.
-
-Choose Git integration at project creation; Cloudflare documents that a Git-integrated Pages project cannot later be switched to Direct Upload. See https://developers.cloudflare.com/pages/get-started/git-integration/ and https://developers.cloudflare.com/pages/framework-guides/deploy-anything/.
+All listings, vendors, events, booth assignments, prices, comments, and dashboard concepts are illustrative. There is no database, authentication, persistent account state, checkout, or live event integration. Favorites/follows/comments are browser-session demonstrations only.

@@ -1,4 +1,3 @@
-
 const products=[
 {id:1,name:'Hand-thrown stoneware mug',maker:'Stone & Stem Pottery',category:'Home & Living',place:'Staunton, VA',price:'$32',note:'Wheel-thrown in small batches',image:'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=85',tag:'MAKER FAVORITE',event:true,story:'Everyday pottery with a little character. Each mug is shaped, glazed, and finished by hand in the Shenandoah Valley.'},
 {id:2,name:'Botanical brass earrings',maker:'Wild Fern Adornments',category:'Jewelry',place:'Harrisonburg, VA',price:'$38',note:'Inspired by wild places',image:'https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=800&q=85',tag:'SMALL BATCH',event:true,story:'Wearable pieces inspired by leaves, seed pods, and the changing seasons. Designed and assembled by an independent maker.'},
@@ -7,15 +6,18 @@ const products=[
 {id:5,name:'Handwoven market tote',maker:'Thread & Timber',category:'Clothing',place:'Staunton, VA',price:'$46',note:'Woven one at a time',image:'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=85',tag:'HANDWOVEN',event:false,story:'A practical, sturdy carryall woven with texture and everyday use in mind.'},
 {id:6,name:'Wildflower honey sampler',maker:'Hollow Creek Apiary',category:'Food & Pantry',place:'Harrisonburg, VA',price:'$18',note:'A taste of the valley',image:'https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=800&q=85',tag:'LOCAL FAVORITE',event:true,story:'A tasting set of local honey varieties that reflect the changing blooms of the valley.'},
 {id:7,name:'Speckled serving bowl',maker:'Stone & Stem Pottery',category:'Home & Living',place:'Staunton, VA',price:'$54',note:'Made for gathering',image:'https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?auto=format&fit=crop&w=800&q=85',tag:'HANDMADE',event:true,story:'A generous serving bowl made to bring people together around the table.'},
-{id:8,name:'Pressed flower pendant',maker:'Wild Fern Adornments',category:'Jewelry',place:'Harrisonburg, VA',price:'$42',note:'A tiny piece of nature',image:'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=85',tag:'ONE OF A KIND',event:false,story:'A delicate pendant preserving the shapes and colors of botanicals in a wearable keepsake.'}];
+{id:8,name:'Pressed flower pendant',maker:'Wild Fern Adornments',category:'Jewelry',place:'Harrisonburg, VA',price:'$42',note:'A tiny piece of nature',image:'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=85',tag:'ONE OF A KIND',event:false,story:'A delicate pendant preserving the shapes and colors of botanicals in a wearable keepsake.'}
+];
 
 const makers=[
 {name:'Stone & Stem Pottery',place:'Staunton, VA',kind:'POTTERY · HOME & LIVING',bio:'Functional pottery, shaped slowly and made to be lived with.',image:'https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?auto=format&fit=crop&w=700&q=85',products:2,events:2},
 {name:'Wild Fern Adornments',place:'Harrisonburg, VA',kind:'JEWELRY · ACCESSORIES',bio:'Botanical details and wearable pieces inspired by wild places.',image:'https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85',products:2,events:1},
-{name:'Little Mountain Press',place:'Lexington, VA',kind:'ART · PRINTS',bio:'Art prints celebrating familiar landscapes and small wonders.',image:'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=700&q=85',products:1,events:2}];
+{name:'Little Mountain Press',place:'Lexington, VA',kind:'ART · PRINTS',bio:'Art prints celebrating familiar landscapes and small wonders.',image:'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=700&q=85',products:1,events:2}
+];
 
 const events=[
-{name:'Shenandoah Makers Market',date:'May 24',place:'Gypsy Hill Park · Staunton, Virginia',makers:18,description:'A gathering of independent makers, artists, and small-batch producers. Explore participating vendors and preview their work before you visit.'}];
+{name:'Shenandoah Makers Market',date:'May 24',place:'Gypsy Hill Park · Staunton, Virginia',makers:18,description:'A gathering of independent makers, artists, and small-batch producers. Explore participating vendors and preview their work before you visit.'}
+];
 
 let activeCategory='All',searchTerm='',saved=new Set(),followed=new Set();
 
@@ -30,7 +32,6 @@ let list=products.filter(p=>
 ($('#availability').value==='all'||p.event));
 
 const sort=$('#sort').value;
-
 if(sort==='name')list.sort((a,b)=>a.name.localeCompare(b.name));
 if(sort==='maker')list.sort((a,b)=>a.maker.localeCompare(b.maker));
 
@@ -87,7 +88,6 @@ $$('[data-maker]').forEach(b=>b.onclick=()=>openMaker(Number(b.dataset.maker)));
 
 function updateSaved(){
 $('#savedCount').textContent=saved.size;
-
 let list=products.filter(p=>saved.has(p.id));
 
 $('#savedPreview').innerHTML=list.length?
@@ -139,13 +139,11 @@ dialog(`
 <p><b>Made by ${p.maker}</b> · ${p.price}</p>
 <p>${p.story}</p>
 <p>${p.event?'This maker is expected at the featured Shenandoah Makers Market sample event.':'Follow this maker to hear about upcoming market appearances.'}</p>
-
 <div class="dialog-actions">
 <button id="detailSave">${saved.has(id)?'♥ Saved to my collection':'♡ Save this find'}</button>
 <button class="secondary" id="makerFromProduct">Meet the maker ↗</button>
 <button class="secondary" id="shareProduct">Copy product link</button>
 </div>
-
 <div class="comments">
 <b>Community notes</b>
 <p>“Love discovering the story behind handmade work.” <small>— Sample shopper</small></p>
@@ -170,7 +168,6 @@ $('#shareProduct').textContent='Link copied (demo)';
 
 $('#commentAdd').onclick=()=>{
 let v=$('#commentInput').value.trim();
-
 if(v){
 $('#commentList').innerHTML+=`<p>“${escapeHTML(v)}” <small>— Guest shopper (local demo)</small></p>`;
 $('#commentInput').value='';
@@ -189,20 +186,16 @@ dialog(`
 <h2>${m.name}</h2>
 <img class="dialog-hero" src="${m.image}" alt="${m.name}">
 <p>${m.bio}</p>
-
 <div class="profile-stats">
 <span><b>${m.products}</b>Featured products</span>
 <span><b>${m.events}</b>Event appearances</span>
 <span><b>${followed.has(m.name)?'Following':'+'}</b>Community connection</span>
 </div>
-
 <h3>Maker's featured finds</h3>
-
 ${items.map(p=>`
 <p>✦ ${p.name}
 <button class="detail-link" data-product="${p.id}">View find ↗</button>
 </p>`).join('')}
-
 <div class="dialog-actions">
 <button id="makerFollow">${followed.has(m.name)?'✓ Following':'＋ Follow this maker'}</button>
 <button class="secondary" id="makerEvents">Find at an event ↗</button>
@@ -226,23 +219,18 @@ dialog(`
 <div class="dialog-meta">FEATURED GATHERING · SAMPLE EVENT</div>
 <h2>${e.name}</h2>
 <img class="dialog-hero" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1000&q=80" alt="Outdoor event">
-
 <p><b>${e.date}</b> · ${e.place}</p>
 <p>${e.description}</p>
 <p><b>${e.makers} participating makers</b> · Sample event data</p>
-
 <h3>Preview the booth map</h3>
 <p>Choose a booth to see an example vendor location. This is a conceptual map, not an actual event layout.</p>
-
 <div class="booth-map">
 ${Array.from({length:12},(_,n)=>`<button data-booth="${n+1}">B${String(n+1).padStart(2,'0')}</button>`).join('')}
 <button class="path">MAIN<br>PATH</button>
 <button class="path">INFO</button>
 <button class="path">FOOD</button>
 </div>
-
 <p id="boothInfo">Select a booth to preview its maker.</p>
-
 <div class="dialog-actions">
 <button id="eventSave">Save this event</button>
 </div>`);
@@ -329,15 +317,12 @@ $('#profileButton').onclick=()=>dialog(`
 <div class="eyebrow">YOUR SHOPPER SPACE</div>
 <h2>Your discovery profile</h2>
 <p>This preview shows how a shopper account could bring favorite finds, followed makers, and saved events together.</p>
-
 <div class="profile-stats">
 <span><b>${saved.size}</b>Saved finds</span>
 <span><b>${followed.size}</b>Followed makers</span>
 <span><b>1</b>Featured event</span>
 </div>
-
 <p>Favorites and follows in this demo are stored only in the current page session. A future version would use a secure account and database.</p>
-
 <div class="dialog-actions">
 <button id="profileSaved">View my collection</button>
 <button class="secondary" id="profileFollowed">View makers</button>
@@ -370,3 +355,67 @@ $('#makers').scrollIntoView({behavior:'smooth'});
 renderProducts();
 renderMakers();
 updateSaved();
+
+
+// Unified VendWeave: vendor, organizer, and Guild workspace previews
+
+function openBusinessPreview(view){
+const content={
+vendor:{
+title:'Vendor workspace preview',
+body:`<p>Your business is more than a booth. VendWeave gives independent merchants a place to present their work, connect with shoppers, and link products to upcoming events.</p>
+<ul>
+<li>Manage a product gallery and maker story</li>
+<li>Connect products to event appearances</li>
+<li>Build followers and shopper relationships</li>
+<li>Explore featured placement and insights</li>
+</ul>
+<p><b>Demo only:</b> Vendor accounts and editing are not connected yet.</p>`
+},
+organizer:{
+title:'Organizer workspace preview',
+body:`<p>Bring your gathering to life. Organizers can showcase events, recruit vendors, highlight participating products, and help shoppers plan their visit.</p>
+<ul>
+<li>Create an event profile and schedule</li>
+<li>Recruit and organize participating vendors</li>
+<li>Feature vendors and products before event day</li>
+<li>Preview booth maps and event discovery tools</li>
+<li>Explore future promotion and attendance insights</li>
+</ul>
+<p><b>Demo only:</b> Event creation and vendor management are not connected yet.</p>`
+},
+premium:{
+title:'Guild Plus · Premium concept',
+body:`<p>Premium is a proposed option for vendors and organizers—not an active subscription or price offer.</p>
+<ul>
+<li>Enhanced profiles and product galleries</li>
+<li>Featured discovery and event placement</li>
+<li>Expanded promotional tools</li>
+<li>Organizer event-management features</li>
+<li>Performance insights and audience engagement</li>
+</ul>
+<p>Community discovery remains welcoming and accessible to shoppers.</p>`
+},
+join:{
+title:'Find your place in the Guild',
+body:`<p>VendWeave brings three groups into one connected marketplace.</p>
+<ul>
+<li><b>Shoppers:</b> discover products, follow makers, save finds, and explore gatherings.</li>
+<li><b>Vendors:</b> showcase products, build an audience, and connect work to events.</li>
+<li><b>Organizers:</b> promote gatherings, recruit vendors, and help shoppers find their way.</li>
+</ul>
+<p><b>Demo only:</b> Account registration is not connected.</p>`
+}
+}[view];
+
+if(!content)return;
+
+dialog(`
+<div class="dialog-meta">VENDWEAVE · CONCEPT PREVIEW</div>
+<h2>${content.title}</h2>
+${content.body}`);
+}
+
+document.querySelectorAll('[data-view]').forEach(button=>
+button.addEventListener('click',()=>openBusinessPreview(button.dataset.view))
+);
