@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" fill="none">
-<g stroke="#B08A4B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-<path d="M10 290V10h280M10 72c44 0 62-18 62-62M10 126c74 0 116-42 116-116M10 180c104 0 170-66 170-170"/>
-<path d="M34 10c0 34-13 47-24 47M88 10c0 61-17 78-78 78M142 10c0 89-31 120-132 120"/>
-<path d="M10 250c60-4 96-40 100-100 60-4 96-40 100-100 60-4 76-20 80-40"/>
-<path d="M42 290c0-48 22-70 70-70 0-48 22-70 70-70 0-48 22-70 70-70"/>
-</g><g fill="#702F3B"><circle cx="10" cy="10" r="4"/><circle cx="290" cy="10" r="4"/><circle cx="10" cy="290" r="4"/></g></svg>
