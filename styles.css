@@ -172,3 +172,34 @@ footer>small{font-size:11px;border-color:#526557}
   .event-copy>p{font-size:15px}
   .guild-section h2,.business-section h2,.closing-cta h2{font-size:38px}
 }
+
+
+/* VendWeave heritage artwork integration — decorative only; community photos stay replaceable */
+.welcome-copy{position:relative}
+.heritage-sprig{
+  position:absolute;right:2%;top:-34px;width:112px;height:auto;
+  opacity:.78;pointer-events:none;transform:rotate(7deg)
+}
+.heritage-divider{
+  width:min(560px,76%);margin:0 auto;padding:7px 0 0;
+  display:flex;justify-content:center;pointer-events:none
+}
+.heritage-divider img{display:block;width:100%;height:auto;max-height:48px;object-fit:contain}
+.guild-emblem-illustrated{
+  width:82px;height:82px;border:0;border-radius:0;background:transparent;
+  display:grid;place-items:center;margin:0 auto 22px;padding:0
+}
+.guild-emblem-illustrated img{display:block;width:100%;height:100%;object-fit:contain}
+.heritage-corners{position:relative;isolation:isolate;overflow:hidden}
+.heritage-corners:before,.heritage-corners:after{
+  content:"";position:absolute;width:145px;height:145px;
+  background:url("images/corner-ornament.svg") no-repeat top left / contain;
+  opacity:.42;pointer-events:none;z-index:-1
+}
+.heritage-corners:before{top:0;left:0}
+.heritage-corners:after{right:0;bottom:0;transform:rotate(180deg)}
+@media(max-width:650px){
+  .heritage-sprig{width:76px;right:0;top:-25px;opacity:.58}
+  .heritage-divider{width:86%;padding-top:3px}
+  .heritage-corners:before,.heritage-corners:after{width:86px;height:86px;opacity:.3}
+}
