@@ -203,3 +203,48 @@ footer>small{font-size:11px;border-color:#526557}
   .heritage-divider{width:86%;padding-top:3px}
   .heritage-corners:before,.heritage-corners:after{width:86px;height:86px;opacity:.3}
 }
+
+
+/* Full-width opening market photograph */
+.welcome{
+  position:relative;
+  isolation:isolate;
+  display:flex;
+  align-items:center;
+  min-height:610px;
+  max-width:none;
+  padding:92px max(7vw, calc((100vw - 1320px)/2)) 88px;
+  background-image:
+    linear-gradient(90deg, rgba(12,24,18,.88) 0%, rgba(12,24,18,.72) 42%, rgba(12,24,18,.18) 100%),
+    url("images/market-hero.jpg");
+  background-size:cover;
+  background-position:center 54%;
+}
+.welcome-copy{
+  position:relative;
+  z-index:1;
+  width:min(650px, 100%);
+}
+.welcome .eyebrow{color:#e3c58c}
+.welcome h1{color:#fffefa;text-shadow:0 2px 18px rgba(0,0,0,.18)}
+.welcome h1 em{color:#e3c58c}
+.welcome-copy>p{color:rgba(255,254,250,.9);max-width:520px}
+.welcome-foot{color:rgba(255,254,250,.82)}
+.welcome-foot span{color:#e3c58c}
+.welcome .heritage-sprig{opacity:.55;filter:brightness(1.8);right:-18px;top:-62px}
+.welcome-image{display:none}
+@media(max-width:850px){
+  .welcome{min-height:560px;padding:78px 6vw 72px;background-position:58% center}
+}
+@media(max-width:620px){
+  .welcome{
+    min-height:570px;
+    padding:76px 22px 62px;
+    background-image:
+      linear-gradient(90deg, rgba(12,24,18,.82) 0%, rgba(12,24,18,.62) 65%, rgba(12,24,18,.38) 100%),
+      url("images/market-hero.jpg");
+    background-position:57% center;
+  }
+  .welcome h1{font-size:48px}
+  .welcome .heritage-sprig{width:66px;right:0;top:-48px;opacity:.45}
+}
